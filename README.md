@@ -5,14 +5,14 @@ Logger macro utility inspired on GLogs
 Serializes the message and the severity level into a std::string.
 
 Usage example
-@code {.cpp}
+```c++
 LOG(logger::WARNING, send) << "Exception ocurred: " << e.what();
-@endcode
+```
 
 The user callback will be called at the end of the scope.
 
 Example of user callback
-@code {.cpp}
+```c++
 void send(std::string str)
 {
   if (logger::get_severity(str) >= logger::WARNING) {
@@ -21,7 +21,7 @@ void send(std::string str)
     push_message_to_a_server(logger::get_message(str));
   }
 }
-@endcode
+```
 
 ## Future work
 
